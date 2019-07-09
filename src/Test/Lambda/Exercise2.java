@@ -9,7 +9,8 @@ public class Exercise2 {
 
     public static void main(String[] args) {
 
-        //1
+        //Napisz program, który pobierze o użytkownika cztery łańcuchy znaków, które umieścisz w liście. Następnie posortuj tę listę używając metody sort.
+        // Użyj wyrażenia lambda, które posortuje łańcuchy znaków malejąco po długości.
         Scanner scanner = new Scanner(System.in);
 
         List<String> userStrs = new ArrayList<>();
