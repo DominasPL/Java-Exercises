@@ -1,7 +1,6 @@
 package Test.Lambda;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 import java.util.function.Consumer;
@@ -21,10 +20,13 @@ public class Exercise2 {
 
         }
 
-        userStrs.sort(String::compareToIgnoreCase);
+        userStrs.sort((s1, s2) -> s1.length() - s2.length());
+
 
         Consumer<String> consumer = System.out::println;
         userStrs.forEach(consumer);
+
+
 
     }
 
