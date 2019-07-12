@@ -32,9 +32,7 @@ public class Exercise6 {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
-        LocalDateTime localDateTime = LocalDateTime.parse(strDate, formatter);
-
-        return localDateTime;
+        return LocalDateTime.parse(strDate, formatter);
 
     }
 
