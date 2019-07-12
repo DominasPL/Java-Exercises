@@ -14,7 +14,7 @@ public class Exercise1 {
         //1. Write a Java program to get the character at the given index within the String.
         Scanner scanner = new Scanner(System.in);
         String str = getString(scanner);
-        Integer index = getIndex(scanner, str);
+        int index = getIndex(scanner, str);
 
         char character = findLetter(str, index);
         System.out.println(character);
@@ -45,9 +45,9 @@ public class Exercise1 {
 
     }
 
-    public static Integer getIndex(Scanner scanner, String str) {
+    public static int getIndex(Scanner scanner, String str) {
 
-        Integer strIndex;
+        int strIndex;
 
 
         while (true) {
@@ -69,7 +69,6 @@ public class Exercise1 {
         }
 
         return strIndex;
-
 
     }
 }
