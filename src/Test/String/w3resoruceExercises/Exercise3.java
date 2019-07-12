@@ -23,7 +23,7 @@ public class Exercise3 {
 
     public static String concatStrings2(String str1, String str2) {
 
+//        return new StringBuilder(str1).append(str2).toString();
         return str1 + str2;
     }
-
 }
