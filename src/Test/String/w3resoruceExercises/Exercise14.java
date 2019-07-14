@@ -27,6 +27,6 @@ public class Exercise14 {
 
         return userStr.replace("ac", "").replace("b", "");
     }
-    
+
 
 }
