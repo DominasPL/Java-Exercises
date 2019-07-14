@@ -18,7 +18,7 @@ public class Exercise1 {
 
     private static void addElementAtFirstPosition(List<String> strElementList) {
 
-        strElementList.add(0,"Watermelon");
+        strElementList.add(0,"Pineapple");
         System.out.println(strElementList);
 
     }
