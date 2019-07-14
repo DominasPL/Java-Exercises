@@ -1,6 +1,5 @@
-package Test.String.w3resoruceExercises;
+package Test.String.w3resoruceExercises.String;
 
-import java.util.Collections;
 import java.util.Scanner;
 
 public class Exercise16 {

@@ -1,4 +1,4 @@
-package Test.String.w3resoruceExercises;
+package Test.String.w3resoruceExercises.String;
 
 import java.util.LinkedList;
 import java.util.List;

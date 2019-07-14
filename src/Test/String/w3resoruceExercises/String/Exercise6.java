@@ -1,4 +1,4 @@
-package Test.String.w3resoruceExercises;
+package Test.String.w3resoruceExercises.String;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
