@@ -23,7 +23,7 @@ public class Exercise1 {
 
     }
 
-    private static List<String> addStrElementsToArrayList(List<String> elementList) {
+    public static List<String> addStrElementsToArrayList(List<String> elementList) {
 
         Scanner scanner = new Scanner(System.in);
         String element;
