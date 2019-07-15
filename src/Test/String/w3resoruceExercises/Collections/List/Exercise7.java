@@ -24,23 +24,21 @@ public class Exercise7 {
         //Method2
         swapElements2(strList, index1, index2);
         System.out.println(strList);
+
     }
 
-    private static List<String> swapElements2(List<String> strList, int index1, int index2) {
+    private static void swapElements2(List<String> strList, int index1, int index2) {
 
         String element = strList.get(index1);
         strList.set(index1, strList.get(index2));
         strList.set(index2, element);
 
-        return strList;
     }
 
 
-    private static List<String> swapElements1(List<String> strList, int index1, int index2) {
+    private static void swapElements1(List<String> strList, int index1, int index2) {
 
         Collections.swap(strList, index1, index2);
-
-        return strList;
     }
 
 }
