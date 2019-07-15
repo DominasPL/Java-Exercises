@@ -39,7 +39,7 @@ public class Exercise2 {
     }
 
 
-    private static int getIndex(List<String> elements, Scanner scanner) {
+    public static int getIndex(List<String> elements, Scanner scanner) {
 
         int index = 0;
 
