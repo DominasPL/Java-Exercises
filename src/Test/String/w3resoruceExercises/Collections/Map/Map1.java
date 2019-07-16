@@ -22,7 +22,7 @@ public class Map1 {
         return map.size();
     }
 
-    public static Map<String,Integer> createMap(HashMap<String, Integer> stringIntegerHashMap, Scanner scanner) {
+    public static Map<String,Integer> createMap(Map<String, Integer> stringIntegerHashMap, Scanner scanner) {
 
         String key;
         String answer;
