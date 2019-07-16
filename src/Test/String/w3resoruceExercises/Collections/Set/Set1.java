@@ -45,7 +45,7 @@ public class Set1 {
 
     }
 
-    private static Set<Integer> createSet(HashSet<Integer> intSet, Scanner scanner) {
+    public static Set<Integer> createSet(Set<Integer> intSet, Scanner scanner) {
 
         String answer = "";
 
