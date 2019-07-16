@@ -17,7 +17,7 @@ public class Map1 {
 
     }
 
-    private static int countMapSize(HashMap<String, Integer> map) {
+    private static int countMapSize(Map<String, Integer> map) {
 
         return map.size();
     }
