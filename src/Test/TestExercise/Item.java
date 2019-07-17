@@ -2,19 +2,11 @@ package Test.TestExercise;
 
 public class Item {
 
-    private double price;
     private String name;
+    private double price;
 
-    public Item(double price, String name) {
-        this.price = price;
+    public Item(String name, double price) {
         this.name = name;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -26,11 +18,19 @@ public class Item {
         this.name = name;
     }
 
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
     @Override
     public String toString() {
         return "Item{" +
-                "price=" + price +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
+                ", price=" + price +
                 '}';
     }
 }
