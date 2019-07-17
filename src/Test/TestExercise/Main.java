@@ -14,12 +14,12 @@ public class Main {
         basket.addItemToBasket(item1, 5);
         basket.addItemToBasket(item2, 20);
 
-        System.out.println(basket.getOrderedItems());
-
         basket.removeItemFromBasket(item1, 5);
-        System.out.println(basket.getOrderedItems());
 
-        
+//        System.out.println(basket.countBasketValue());
+
+        System.out.println(basket);
+
     }
 
 
