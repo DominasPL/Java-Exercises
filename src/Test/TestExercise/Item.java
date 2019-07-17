@@ -6,6 +6,10 @@ public class Item {
     private double price;
 
     public Item(String name, double price) {
+
+        if (price <= 0)
+            throw new IllegalArgumentException("Price have to be greater than 0");
+
         this.name = name;
         this.price = price;
     }
