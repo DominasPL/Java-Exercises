@@ -39,7 +39,7 @@ public class Basket {
             orderedItems.remove(item);
 
         else if (orderedItems.isEmpty())
-            throw new NullPointerException("You cant remove an item from empty basket!");
+            throw new IllegalArgumentException("You cant remove an item from empty basket!");
 
         else
             throw new IllegalArgumentException("An item is not in the basket or an amount is incorrect!");

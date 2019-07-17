@@ -14,9 +14,11 @@ public class Main {
         basket.addItemToBasket(item1, 5);
         basket.addItemToBasket(item2, 20);
 
+        System.out.println(basket);
+
         basket.removeItemFromBasket(item1, 5);
 
-//        System.out.println(basket.countBasketValue());
+        System.out.println(basket.countBasketValue());
 
         System.out.println(basket);
 
