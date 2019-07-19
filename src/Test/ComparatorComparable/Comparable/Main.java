@@ -1,7 +1,6 @@
-package Test.Comparator;
+package Test.ComparatorComparable.Comparable;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 public class Main {
 
@@ -18,7 +17,6 @@ public class Main {
         Arrays.stream(people)
                 .sorted()
                 .forEach(System.out::println);
-
 
 
     }

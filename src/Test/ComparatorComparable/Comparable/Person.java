@@ -1,4 +1,4 @@
-package Test.Comparator;
+package Test.ComparatorComparable.Comparable;
 
 public class Person implements Comparable<Person> {
 
@@ -38,10 +38,10 @@ public class Person implements Comparable<Person> {
     @Override
     public int compareTo(Person o) {
 
-        if (this.getSurname().compareToIgnoreCase(o.getSurname()) == 0)
-            return o.getName().compareToIgnoreCase(this.getName());
+        int surnameCompare = this.surname.compareToIgnoreCase(o.getSurname());
+        if (surnameCompare != 0)
+            return surnameCompare;
 
-        return this.getSurname().compareToIgnoreCase(o.getSurname());
-
+        return this.name.compareToIgnoreCase(o.getName());
     }
 }
