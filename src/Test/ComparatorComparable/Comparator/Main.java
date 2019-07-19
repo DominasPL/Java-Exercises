@@ -38,24 +38,41 @@ public class Main {
 //        });
 
         //Surname -> Age -> Name
-        employees.sort((o1, o2) -> {
+//        employees.sort((o1, o2) -> {
+//
+//            int surnameCompare = o1.getSurname().compareToIgnoreCase(o2.getSurname());
+//            if (surnameCompare != 0)
+//                return surnameCompare;
+//
+//            int ageCompare = Integer.compare(o1.getAge(), o2.getAge());
+//            if (ageCompare != 0)
+//                return ageCompare;
+//
+//            return o1.getName().compareToIgnoreCase(o2.getName());
+//
+//        });
 
-            int surnameCompare = o1.getSurname().compareToIgnoreCase(o2.getSurname());
-            if (surnameCompare != 0)
-                return surnameCompare;
-
-            int ageCompare = Integer.compare(o1.getAge(), o2.getAge());
-            if (ageCompare != 0)
-                return ageCompare;
-
-            return o1.getName().compareToIgnoreCase(o2.getName());
-
-        });
+//
+//        for (Employee employee : employees) {
+//            System.out.println(employee);
+//        }
 
 
-        for (Employee employee : employees) {
-            System.out.println(employee);
-        }
+        employees.stream()
+                .sorted((o1, o2) -> {
+
+                    int surnameCompare = o1.getSurname().compareToIgnoreCase(o2.getSurname());
+                    if (surnameCompare != 0)
+                        return surnameCompare;
+
+                    int ageCompare = Integer.compare(o1.getAge(), o2.getAge());
+                    if (ageCompare != 0)
+                        return ageCompare;
+
+                    return o1.getName().compareToIgnoreCase(o2.getName());
+
+                })
+                .forEach(System.out::println);
 
     }
 }
