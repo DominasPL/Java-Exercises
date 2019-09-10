@@ -1,6 +1,5 @@
 package Test.String.w3resoruceExercises.Collections.Map;
 
-import Test.Testy.PetRock;
 
 import java.util.HashMap;
 import java.util.Iterator;
