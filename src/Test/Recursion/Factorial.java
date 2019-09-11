@@ -2,25 +2,32 @@ package Test.Recursion;
 
 public class Factorial {
 
-    public long countFactorial1(long number) {
+    public int countFactorial1(int number) {
 
-        long factorial = 1L;
+        int result = 1;
 
-        for (int i = 2; i <= number; i++) {
-            factorial = factorial * i;
+        if (number < 0) {
+            throw new IllegalArgumentException("Number must be greater than 0");
         }
 
-        return factorial;
-    }
-
-    public long countFactorial2(long number) {
-
-        if (number < 2)
+        if (number == 0 || number == 1) {
             return 1;
+        }
 
-        return number * countFactorial1(number - 1);
+        for (int i = 2; i <= number; i++) {
+            result *= i;
+        }
 
+        return result;
     }
 
+    public int countFactorial2(int number) {
+
+        if (number == 0) {
+            return 1;
+        }
+
+        return number * countFactorial2(number - 1);
+    }
 
 }
