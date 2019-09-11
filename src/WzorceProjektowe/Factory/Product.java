@@ -1,4 +1,4 @@
-package WzorceProjektowe.Fabryka;
+package WzorceProjektowe.Factory;
 
 public interface Product {
 
