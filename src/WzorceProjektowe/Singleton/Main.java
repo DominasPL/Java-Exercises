@@ -1,4 +1,6 @@
-import WzorceProjektowe.Singleton;
+package WzorceProjektowe.Singleton;
+
+import WzorceProjektowe.Singleton.Singleton;
 
 public class Main {
 

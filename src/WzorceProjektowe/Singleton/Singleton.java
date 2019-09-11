@@ -1,4 +1,4 @@
-package WzorceProjektowe;
+package WzorceProjektowe.Singleton;
 
 
 public class Singleton {
