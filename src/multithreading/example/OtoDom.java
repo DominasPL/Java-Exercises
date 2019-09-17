@@ -3,10 +3,20 @@ package multithreading.example;
 import java.io.*;
 import java.net.URL;
 import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class OtoDom {
 
+    //47,947s - without multithreading
+    //1,353s - with multithreading 34 threads
+    //1,180s - with multithreading 15 threads
+    //1,192s - with multithreading 10 threads
     public static void main(String[] args) throws IOException {
+
+        long start = System.currentTimeMillis();
+
+        ExecutorService executorService = Executors.newFixedThreadPool(10);
 
         URL otodom = new URL("https://www.otodom.pl/sprzedaz/mieszkanie/wroclaw/");
         BufferedReader in = new BufferedReader(
@@ -23,12 +33,22 @@ public class OtoDom {
         in.close();
 
         Set<String> links = findAllLinks(stringBuilder.toString());
-        int fileName = 1;
-        for (String link : links) {
-            loadPageContentAndWriteToFile(link, fileName + ".html");
-            fileName++;
+
+        for (int i = 0; i < links.size() ; i++) {
+            int finalI = i;
+            executorService.submit(() -> {
+                try {
+                    loadPageContentAndWriteToFile((String)links.toArray()[finalI], finalI + ".html");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+
         }
 
+        executorService.shutdown();
+        long end = System.currentTimeMillis();
+        System.out.println(end-start);
 
     }
 
@@ -45,8 +65,6 @@ public class OtoDom {
             String[] strings = content.substring(i).split(".html");
             links.add(strings[0]);
         }
-
-        System.out.println(links.size());
 
         return links;
     }
