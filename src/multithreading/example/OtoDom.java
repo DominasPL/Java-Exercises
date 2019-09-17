@@ -1,8 +1,6 @@
 package multithreading.example;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.URL;
 import java.util.*;
 
@@ -10,13 +8,26 @@ public class OtoDom {
 
     public static void main(String[] args) throws IOException {
 
+        URL otodom = new URL("https://www.otodom.pl/sprzedaz/mieszkanie/wroclaw/");
+        BufferedReader in = new BufferedReader(
+                new InputStreamReader(otodom.openStream()));
 
-        String content = loadPageContent();
-        Set<String> links = findAllLinks(content);
+        String inputLine;
+        StringBuilder stringBuilder = new StringBuilder();
 
-        links.stream()
-            .forEach(s -> System.out.println(s));
-        System.out.println(links.size());
+        while ((inputLine = in.readLine()) != null) {
+            stringBuilder.append(inputLine);
+            stringBuilder.append(System.lineSeparator());
+        }
+
+        in.close();
+
+        Set<String> links = findAllLinks(stringBuilder.toString());
+        int fileName = 1;
+        for (String link : links) {
+            loadPageContentAndWriteToFile(link, fileName + ".html");
+            fileName++;
+        }
 
 
     }
@@ -35,12 +46,14 @@ public class OtoDom {
             links.add(strings[0]);
         }
 
+        System.out.println(links.size());
+
         return links;
     }
 
-    public static String loadPageContent() throws IOException {
+    public static void loadPageContentAndWriteToFile(String link, String fileName) throws IOException {
 
-        URL otodom = new URL("https://www.otodom.pl/sprzedaz/mieszkanie/wroclaw/");
+        URL otodom = new URL(link);
         BufferedReader in = new BufferedReader(
                 new InputStreamReader(otodom.openStream()));
 
@@ -54,8 +67,12 @@ public class OtoDom {
 
         in.close();
 
-        return stringBuilder.toString();
+        BufferedWriter bw = new BufferedWriter(new FileWriter(fileName, false));
+        bw.write(stringBuilder.toString());
+        bw.close();
     }
+
+
 
 
 }
